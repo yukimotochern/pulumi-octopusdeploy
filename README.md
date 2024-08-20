@@ -78,7 +78,7 @@ Pulumi provider repositories have the following general structure:
 - `provider/` contains the Go code used to create the provider as well as generate the SDKs in the various languages that Pulumi supports.
   - `provider/cmd/pulumi-tfgen-foo` generates the Pulumi resource schema (`schema.json`), based on the Terraform provider's resources.
   - `provider/cmd/pulumi-resource-foo` generates the SDKs in all supported languages from the schema, placing them in the `sdk/` folder.
-  - `provider/pkg/resources.go` is the location where we will define the Terraform-to-Pulumi mappings for resources.
+  - `provider/resources.go` is the location where we will define the Terraform-to-Pulumi mappings for resources.
 - `sdk/` contains the generated SDK code for each of the language platforms that Pulumi supports, with each supported platform in a separate subfolder.
 
 1. In `provider/go.mod`, add a reference to the upstream Terraform provider in the `require` section, e.g.
